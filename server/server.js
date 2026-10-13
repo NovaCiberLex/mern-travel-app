@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import connectDB from "./config/db.js";
+import citiesRouter from "./routes/cities.js";
 
 dotenv.config();
 
@@ -14,6 +15,8 @@ app.use(express.json());
 app.get("/", (req, res) => {
   res.json({ message: "API is running" });
 });
+
+app.use("/api/cities", citiesRouter);
 
 connectDB();
 
