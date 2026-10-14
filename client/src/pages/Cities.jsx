@@ -1,6 +1,5 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 import {
   Alert,
   Box,
@@ -12,28 +11,11 @@ import {
   Container,
   Typography,
 } from "@mui/material";
-
-const API_URL = "http://localhost:5000/api";
+import { AppContext } from "../context/AppContext";
 
 function Cities() {
-  const [cities, setCities] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const { cities, loading, error, fetchCities } = useContext(AppContext);
   const navigate = useNavigate();
-
-  async function fetchCities() {
-    try {
-      setLoading(true);
-      setError(null);
-      const response = await axios.get(`${API_URL}/cities`);
-      setCities(response.data);
-    } catch (err) {
-      setError("Could not load cities. Please try again later.");
-      console.error("Error fetching cities:", err.message);
-    } finally {
-      setLoading(false);
-    }
-  }
 
   useEffect(() => {
     fetchCities();
