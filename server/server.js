@@ -3,6 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import connectDB from "./config/db.js";
 import citiesRouter from "./routes/cities.js";
+import itinerariesRouter from "./routes/itineraries.js";
 
 dotenv.config();
 
@@ -17,6 +18,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/cities", citiesRouter);
+app.use("/api/itineraries", itinerariesRouter);
 
 connectDB();
 
