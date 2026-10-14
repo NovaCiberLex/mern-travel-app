@@ -1,0 +1,111 @@
+{
+  "info": {
+    "_postman_id": "c53b2758-e1f1-4db9-8fe0-7ef9892889b4",
+    "name": "MYtinerary API",
+    "description": "### Welcome to Postman! This is your first collection. \n\nCollections are your starting point for building and testing APIs. You can use this one to:\n\n• Group related requests\n• Test your API in real-world scenarios\n• Document and share your requests\n\nUpdate the name and overview whenever you’re ready to make it yours.\n\n[Learn more about Postman Collections.](https://learning.postman.com/docs/collections/collections-overview/)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "58936132",
+    "_collection_link": "https://go.postman.co/collection/58936132-c53b2758-e1f1-4db9-8fe0-7ef9892889b4?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Create city",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Mexico City\",\r\n  \"country\": \"Mexico\",\r\n  \"image\": \"https://images.unsplash.com/photo-1585464231875-d9ef1f5ad396?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/cities",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "cities"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get all cities",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/cities",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "cities"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create itinerary",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"title\": \"Montjuic Sunset Walk\",\r\n  \"description\": \"Hike up Montjuic hill, visit the castle and watch the Magic Fountain show at sunset.\",\r\n  \"price\": 25,\r\n  \"duration\": 4,\r\n  \"city\": \"6acecd47bde58267e92c3e19\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/itineraries",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "itineraries"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get itineraries by city",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/itineraries/6acecd47bde58267e92c3e19",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "itineraries",
+            "6acecd47bde58267e92c3e19"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
